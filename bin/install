@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+set -e
+set -o pipefail
+# set -x
+
+ASDF_INSTALL_TYPE=${ASDF_INSTALL_TYPE:-version}
+[ -n "$ASDF_INSTALL_VERSION" ] || (>&2 echo 'Missing ASDF_INSTALL_VERSION' && exit 1)
+[ -n "$ASDF_INSTALL_PATH" ] || (>&2 echo 'Missing ASDF_INSTALL_PATH' && exit 1)
+
+install_plugin() {
+  local install_type=$1
+  local version=$2
+  local install_path=$3
+  local download_url="https://github.com/ahmetb/kubectx"
+
+  echo "Downloading kubectx from $download_url"
+
+  git clone --branch $version --depth=1 "$download_url.git" "$install_path" > /dev/null
+
+  local bin_install_path="$install_path/bin"
+  mkdir -p "${bin_install_path}"
+  pushd "${bin_install_path}" &> /dev/null
+  ln -s ../kubectx kubectx
+  ln -s ../kubens kubens
+  popd &> /dev/null
+}
+
+install_plugin "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" "$ASDF_INSTALL_PATH"
