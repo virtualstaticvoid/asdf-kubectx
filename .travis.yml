@@ -1,6 +1,6 @@
 language: c
 
-script: asdf plugin-test kubectx https://github.com/virtualstaticvoid/asdf-kubectx.git "kubectx version"
+script: asdf plugin-test kubectx https://github.com/virtualstaticvoid/asdf-kubectx.git
 
 before_script:
   - git clone --branch master --depth=1 https://github.com/asdf-vm/asdf.git asdf
