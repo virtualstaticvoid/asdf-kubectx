@@ -1,6 +1,6 @@
 language: c
 
-script: asdf plugin-test kubectx https://github.com/virtualstaticvoid/asdf-kubectx.git
+script: asdf plugin-test kubectx $TRAVIS_BUILD_DIR "kubectx --help"
 
 before_script:
   - git clone --branch master --depth=1 https://github.com/asdf-vm/asdf.git asdf
