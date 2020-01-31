@@ -16,6 +16,14 @@ install_plugin() {
 
   echo "Downloading kubectx from $download_url"
 
+  # HACK: asdf wants numeric version numbers, but most start with a "v"
+  # since people usually tag releases in GitHub with a vX.X.X and _not_ X.X.X
+  # so need to prefix version based on this fragile logic :-/
+  # in case the version is in some other format such as FOOBAR.X.X.X
+  if [[ "$version" =~ ^[0-9] ]]; then
+    version="v${version}"
+  fi
+
   git clone --branch $version --depth=1 "$download_url.git" "$install_path" > /dev/null
 
   local bin_install_path="$install_path/bin"
