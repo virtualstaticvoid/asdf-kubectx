@@ -1,6 +1,6 @@
 # asdf-kubectx
 
-[![Build Status](https://travis-ci.org/virtualstaticvoid/asdf-kubectx.svg?branch=master)](https://travis-ci.org/virtualstaticvoid/asdf-kubectx)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/virtualstaticvoid/asdf-kubectx/Main%20Workflow?style=flat-square)](https://github.com/virtualstaticvoid/asdf-kubectx/actions)
 
 [`kubectx`][util] plugin for [asdf](https://github.com/asdf-vm/asdf) version manager
 
