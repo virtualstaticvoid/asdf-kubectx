@@ -22,7 +22,7 @@ jobs:
       - name: asdf_plugin_test
         uses: asdf-vm/actions/plugin-test@v1.0.1
         with:
-          command: kubectx --help
+          command: kubens --help
         env:
           GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
