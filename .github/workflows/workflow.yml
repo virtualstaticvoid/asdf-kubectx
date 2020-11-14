@@ -22,7 +22,18 @@ jobs:
       - name: asdf_plugin_test
         uses: asdf-vm/actions/plugin-test@v1.0.1
         with:
-          command: "kubectx --help && kubens --help"
+          command: kubens --help
+        env:
+          GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+          # trick to make it look as if kubectl is installed
+          KUBECTL: /bin/true
+
+      - name: asdf_plugin_test_ctx_latest
+        uses: asdf-vm/actions/plugin-test@v1.0.1
+        with:
+          command: kubectx --help
+          version: "master"
         env:
           GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
