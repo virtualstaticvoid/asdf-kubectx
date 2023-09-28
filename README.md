@@ -1,6 +1,6 @@
 # asdf-kubectx
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/virtualstaticvoid/asdf-kubectx/Main%20Workflow?style=flat-square)](https://github.com/virtualstaticvoid/asdf-kubectx/actions)
+[![Main Workflow](https://github.com/virtualstaticvoid/asdf-kubectx/actions/workflows/workflow.yml/badge.svg)](https://github.com/virtualstaticvoid/asdf-kubectx/actions/workflows/workflow.yml)
 
 [`kubectx`][util] plugin for [asdf](https://github.com/asdf-vm/asdf) version manager
 
